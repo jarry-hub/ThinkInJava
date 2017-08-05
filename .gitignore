@@ -19,10 +19,10 @@
 *.rar
 
 # self definition #
-
 /tartget/
 /.metadata/
 /.recommenders/
+/Servers/
 .classpath
 .project
 .settings
