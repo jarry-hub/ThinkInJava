@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  xmlns="http://www.springframework.org/schema/beans"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:context="http://www.springframework.org/schema/context" 
+        xmlns:aop="http://www.springframework.org/schema/aop"  
+        xsi:schemaLocation="  
+           http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+           http://www.springframework.org/schema/aop  
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">  
+
+
+		<!-- 新增依赖  spring-aop 和 aspectjweaver -->
+		<!-- 配置目标类 -->
+		<bean id="existClass" class="com.chang.aop.ExistClass" ></bean>
+		<!-- 配置切面 -->
+		<bean id="existClassAspect" class="com.chang.aop.ExistClassAspect"></bean>
+		<aop:config>
+			<!-- expression="execution(* com.chang.aop..*.*(..))" 匹配com.chang.aop包及子包下的任何方法 -->
+			<!-- expression="execution(* com.chang.aop.ExistClass.*(..))" 匹配com.chang.aop.ExistClass类的任何方法 -->
+			<aop:pointcut expression="execution(* com.chang.aop.ExistClass.*(..))" id="pointcut"/>
+			<aop:aspect ref="existClassAspect">
+			<aop:before pointcut-ref="pointcut" method="beforeAction"></aop:before>
+			<aop:after pointcut="execution(* com.chang.aop.ExistClass.*(..))" method="afterFinallyAction"></aop:after>
+			
+			<aop:before pointcut="execution(* com.chang.aop.ExistClass.sayHello(..)) and args(para, m)" method="beforeAction(java.lang.String, int)" arg-names="para, m"></aop:before>
+<!-- 			<aop:after-returning pointcut="com.chang.aop.ExistClass.returnHello(..)) and args(para)" method="afterFinallyAction(java.lang.String)" arg-names="para" returning="para"></aop:after-returning> -->		
+ 		</aop:aspect>
+			
+		</aop:config>
+
+		
+		 <!-- Spring默认不支持@AspectJ风格的切面声明，为了支持需要使用如下配置 -->
+		<aop:aspectj-autoproxy/>  
+		<bean id="aspectAnnotationClass"  class="com.chang.aop.AspectAnnotationClass"/>  
+ 		<bean id="AspectAnnotationAspect" class="com.chang.aop.AspectAnnonationAspect"/>  
+   
+
+
+
+</beans>
