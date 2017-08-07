@@ -12,6 +12,8 @@
   	<spring.version>4.1.6.RELEASE</spring.version>
   	<spring-transaction.version>3.1.2.RELEASE</spring-transaction.version>
   	<aspect.version>1.8.10</aspect.version>
+  	<hibernate.version>5.2.10.Final</hibernate.version>
+  	<slf4j.version>1.7.21</slf4j.version>
   </properties>
   
   <dependencies>
@@ -21,6 +23,14 @@
 	    <version>4.11</version>
 	    <scope>test</scope>
 	</dependency>
+	
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>${slf4j.version}</version>
+	</dependency>
+
+	
 
     <dependency>
 	    <groupId>javax.servlet</groupId>
@@ -33,6 +43,12 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
 	    <version>${spring.version}</version>
+	    <exclusions>
+	        <exclusion>
+	            <groupId>commons-logging</groupId>
+	            <artifactId>commons-logging</artifactId>
+	        </exclusion>
+	    </exclusions>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -98,6 +114,23 @@
 	    <artifactId>org.springframework.transaction</artifactId>
 	    <version>${spring-transaction.version}</version>
 	</dependency>
+	
+	<!--  #### hibernate #### -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	
+	
+	
+	
 	
 	
   </dependencies>

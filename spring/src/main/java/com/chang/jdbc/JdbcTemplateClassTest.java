@@ -1,3 +1,8 @@
+/**
+ * JDBCÄ£°åÀà
+ * http://jinnianshilongnian.iteye.com/blog/1423897
+ */
+
 package com.chang.jdbc;
 
 import java.sql.Connection;
@@ -25,7 +30,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.support.rowset.SqlRowSet;  
 
-public class JdbcTemplateTest { 
+public class JdbcTemplateClassTest { 
 	
     private static JdbcTemplate jdbcTemplate; 
     
