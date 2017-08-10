@@ -111,8 +111,8 @@
 	
 	<dependency>
 		<groupId>org.springframework</groupId>
-	    <artifactId>org.springframework.transaction</artifactId>
-	    <version>${spring-transaction.version}</version>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${spring.version}</version>
 	</dependency>
 	
 	<!--  #### hibernate #### -->

@@ -3,8 +3,6 @@
  * 1. 首先不能使用同名的pointcut函数名, 无法识别
  * 2. 
  */
-
-
 package com.chang.aop;
 
 import org.aspectj.lang.JoinPoint;
