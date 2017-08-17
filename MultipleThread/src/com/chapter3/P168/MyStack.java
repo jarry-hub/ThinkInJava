@@ -1,7 +1,4 @@
-/**
- * 一生产与一消费：操作栈
- */
-package com.chapter3.P164;
+package com.chapter3.P168;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +9,7 @@ public class MyStack {
 	
 	synchronized public void push() {
 		try{
-			if( 1 == list.size()) {
+			while( 1 == list.size()) {
 				System.out.println("push 操作中的：" + Thread.currentThread().getName() + " 线程呈wait装状态. ");
 				this.wait();
 			}
@@ -27,7 +24,7 @@ public class MyStack {
 	synchronized public String pop() {
 		String returnValue = "";
 		try {
-			if(0 == list.size()) {
+			while(0 == list.size()) {
 				System.out.println("pop 操作中的：" + Thread.currentThread().getName() + " 线程呈wait装状态. ");
 				this.wait();
 			}
@@ -42,4 +39,3 @@ public class MyStack {
 	}
 
 }
- 
