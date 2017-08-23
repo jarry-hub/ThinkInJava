@@ -1,4 +1,4 @@
-package com.chang.command.sample.tvcontroller;
+package com.chang.command.example.tvcontroller;
 
 public class InvokerTVController {
 	private Command openTVCommand = null;

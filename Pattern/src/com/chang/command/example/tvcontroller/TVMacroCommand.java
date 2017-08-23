@@ -1,4 +1,4 @@
-package com.chang.command.sample.tvcontroller;
+package com.chang.command.example.tvcontroller;
 
 import java.util.ArrayList;
 import java.util.List;

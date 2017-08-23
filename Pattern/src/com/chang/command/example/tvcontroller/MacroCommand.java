@@ -1,4 +1,4 @@
-package com.chang.command.sample.tvcontroller;
+package com.chang.command.example.tvcontroller;
 
 //ºêÃüÁî
 public interface MacroCommand extends Command {
