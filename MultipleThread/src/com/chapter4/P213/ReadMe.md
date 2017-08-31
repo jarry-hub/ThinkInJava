@@ -14,7 +14,7 @@ RunTest.java执行结果：
 ★★★★★
 ```
 **注意**
-&emsp;&emsp; 判断条件while. 因为
+&emsp;&emsp; 判断条件while. 测试if也是可以的。
 
 
 

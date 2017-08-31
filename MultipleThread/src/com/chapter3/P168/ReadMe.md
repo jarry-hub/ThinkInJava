@@ -4,3 +4,4 @@ example in this package:
 			修改前例中的mystack，使用while判断条件替代if
 	 
 *** 
+&emsp;&emsp;消除前面的错误

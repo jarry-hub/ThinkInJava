@@ -2,6 +2,14 @@
 &emsp;&emsp;每一小结和例子的对应关系
 	 
 *** 
+#### 3.1 等待/通知机制
+##### 3.1.1 生产者/消费者模式实现
+###### [一生产与一消费:操作栈](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P164)
+###### [一生产与多消费:操作栈(ERROR)](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P167)
+###### [一生产与多消费:操作栈(OK)](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P168)
+###### [多生产与一消费:操作栈](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P169)
+###### [多生产与多消费:操作栈](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P170)
+
 #### 3.2 Join方法的使用
 ##### 3.2.5 [方法join(long)和sleep()的区别](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P184)
 ##### 3.2.6 [方法join()后面的代码提前运行：出现意外](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter3/P187)
@@ -20,4 +28,16 @@
 ##### 4.1.5 [使用多个Condition实现通知部分线程：错误用法](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P208)
 ##### 4.1.6 [使用多个Condition实现通知部分线程：正确用法](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P210)
 ##### 4.1.7 [实现生产者/消费者模式:一对一交替打印](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P213)
+##### 4.1.8 [实现生产者/消费者模式:多对多交替打印](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P214)
+##### 4.1.9 [公平锁和非公平锁](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P216)
+##### 4.1.10 [方法getHoldCount()/getQueueLength()/getWaitQueueLength()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P216)
+##### 4.1.11 [方法hasQueuedThread()/hasQueuedThreads()/hasWaiters()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P222)
+##### 4.1.12 [方法isFair()/isHeldByCurrentThread()/isLocked()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P224)
+
+
+
+
+
+
+
 

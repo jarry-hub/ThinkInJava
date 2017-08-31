@@ -1,4 +1,4 @@
-package com.chapter4.P213;
+package com.chapter4.P214.notifyAll;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -14,12 +14,13 @@ public class MyService {
 	public void set() {
 		try {
 			lock.lock();
-			if(true == hasValue) {
+			while(true == hasValue) {
+				System.out.println("set before await:¡î¡î");
 				condition.await();
 			}
 			System.out.println("¡î¡î¡î¡î¡î");
 			hasValue = true;
-			condition.signal();
+			condition.signalAll();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
@@ -30,12 +31,13 @@ public class MyService {
 	public void get() {
 		try {
 			lock.lock();
-			if(false == hasValue) {
+			while(false == hasValue) {
+				System.out.println("get before await:¡ï¡ï");
 				condition.await();
 			}
 			System.out.println("¡ï¡ï¡ï¡ï¡ï");
 			hasValue = false;
-			condition.signal();
+			condition.signalAll();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
