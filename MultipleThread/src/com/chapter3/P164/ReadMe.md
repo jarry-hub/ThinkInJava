@@ -5,7 +5,7 @@ example in this package:
 	 
 *** 
 //程序一致运行，无异常
-
+```
 push = 1
 push 操作中的：Thread-0 线程呈wait装状态. 
 pop = 0
