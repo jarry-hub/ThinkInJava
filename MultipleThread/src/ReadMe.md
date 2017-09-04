@@ -33,11 +33,18 @@
 ##### 4.1.10 [方法getHoldCount()/getQueueLength()/getWaitQueueLength()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P216)
 ##### 4.1.11 [方法hasQueuedThread()/hasQueuedThreads()/hasWaiters()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P222)
 ##### 4.1.12 [方法isFair()/isHeldByCurrentThread()/isLocked()的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P224)
+##### 4.1.13 [方法lockInterruptibly()/tryLock()/tryLock(Long timeout, TimeUnit unit)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P227)
+##### 4.1.14 [方法awaitUninterruptibly()的使用](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P230)
+##### 4.1.15 [方法awaitUntil()的使用](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P232)
+##### 4.1.16 [使用Condition实现顺序执行](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P234)
 
+#### 4.2 使用ReentrantReadWriteLock类
+##### 4.2.1 [类ReentrantReadWriteLock的使用：读读共享](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P236)
+##### 4.2.2 [类ReentrantReadWriteLock的使用：写写互斥](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P237)
+##### 4.2.3 [类ReentrantReadWriteLock的使用：读写互斥](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P238)
 
-
-
-
-
+### 第五章 定时器Timer
+#### 5.1 定时器Timer的使用
+##### 5.1.1 [方法schedule(TimerTask task, Date time)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P242)
 
 
