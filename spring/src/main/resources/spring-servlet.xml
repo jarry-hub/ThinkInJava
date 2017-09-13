@@ -25,5 +25,26 @@
 	</bean>
 	
 	
+	<!-- 以上是学习测试用 -->
+	
+	
+	
+	<!-- 以下为spring框架下的功能学习使用 -->
+	<!-- 开启注解 -->  
+    <mvc:annotation-driven />
+    <!-- 注解扫描包 -->
+    <context:component-scan base-package="com.*" />
+    
+    <mvc:default-servlet-handler />
+	<!-- 将css这种静态文件指定到某个特殊的文件夹中 -->
+	<mvc:resources location="/static/" mapping="/static/**" />
+	
+	<!-- 配置视图解析器 如何把handler方法返回值解析为实际的物理视图 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name = "prefix" value="/static/"></property>
+        <property name = "suffix" value = ".jsp"></property>
+    </bean>
+	
+	
 	
 </beans>

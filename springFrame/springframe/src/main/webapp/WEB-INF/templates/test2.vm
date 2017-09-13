@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+    #set($baseUrl = $request.getScheme() + "://" + $request.getServerName() +
+        ":" + $request.getServerPort() + $request.getContextPath())
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    这是一个带有资源文件的静态页面页面
+</body>
+<script src="$baseUrl/resources/jquery/jquery.min.js"/>
+</html>

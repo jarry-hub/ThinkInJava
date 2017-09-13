@@ -9,7 +9,7 @@
  	<display-name>Archetype Created Web Application</display-name>
  
     <welcome-file-list>
-        <welcome-file>/MyFirstServlet</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
 	<servlet>
@@ -30,7 +30,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/*-beans.xml</param-value>
-	</context-param> 
+	</context-param>
     
  
 </web-app>

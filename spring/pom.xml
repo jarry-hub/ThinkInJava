@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
+  	<jdk.version>1.8</jdk.version>
   	<spring.version>4.1.6.RELEASE</spring.version>
   	<spring-transaction.version>3.1.2.RELEASE</spring-transaction.version>
   	<aspect.version>1.8.10</aspect.version>
@@ -24,14 +25,18 @@
 	    <scope>test</scope>
 	</dependency>
 	
+	<!-- 日志 -->
 	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-api</artifactId>
-	    <version>${slf4j.version}</version>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
 	</dependency>
-
+	<dependency>  
+    	<groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-log4j12</artifactId>  
+        <version>${slf4j.version}</version>  
+    </dependency>
 	
-
     <dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>javax.servlet-api</artifactId>
@@ -129,11 +134,11 @@
 	</dependency>
 	
 	
-<dependency>
-    <groupId>jaxen</groupId>
-    <artifactId>jaxen</artifactId>
-    <version>1.1.6</version>
-</dependency>
+	<dependency>
+	    <groupId>jaxen</groupId>
+	    <artifactId>jaxen</artifactId>
+	    <version>1.1.6</version>
+	</dependency>
 
 	
 	
@@ -155,6 +160,21 @@
 	           <useBodyEncodingForURI>true</useBodyEncodingForURI>
 	       </configuration>
 	   </plugin>
+	   
+	   <!-- 解决maven updateProject之后java变成1.5的问题-->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.6.2</version>
+			<configuration>
+				<source>${jdk.version}</source>
+				<target>${jdk.version}</target>
+				<encoding>UTF-8</encoding>
+			</configuration>
+		</plugin>
+	   
    </plugins>
   </build>
+  
+  
 </project>
