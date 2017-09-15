@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.big.data.dao.mysql.TokenValidateMapper">
+
+    <!--
+        index: UNIQUE KEY `user_app_id_idx` (`user_id`,`app_id`)
+        performance: 
+        check-time: 
+     -->
+    <select id="getToken" parameterType="java.lang.String"
+            resultType="com.phicomm.big.data.model.authorization.TokenBean">
+        SELECT
+            token,
+            update_time AS updateTime
+        FROM
+            authorization_token_info
+        WHERE
+            user_id = #{userId,jdbcType=VARCHAR}
+            AND app_id = #{appId,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO authorization_token_info (
+            user_id,
+            app_id,
+            token,
+            update_time,
+            create_time
+        )
+        VALUES
+            (
+                #{userId,jdbcType=VARCHAR},
+                #{appId,jdbcType=VARCHAR},
+                #{token,jdbcType=VARCHAR},
+                now(),
+                now()
+            )
+    </insert>
+
+    <update id="update">
+        UPDATE authorization_token_info
+        SET token       = #{token,jdbcType=VARCHAR},
+            update_time = now()
+        WHERE user_id = #{userId,jdbcType=VARCHAR}
+              AND app_id = #{appId,jdbcType=VARCHAR}
+    </update>
+</mapper>

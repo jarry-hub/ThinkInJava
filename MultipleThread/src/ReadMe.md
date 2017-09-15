@@ -46,5 +46,5 @@
 ### 第五章 定时器Timer
 #### 5.1 定时器Timer的使用
 ##### 5.1.1 [方法schedule(TimerTask task, Date time)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P242)
-
+##### 5.1.2 [方法schedule(TimerTask task, Date firstTime, long period)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P247)
 

@@ -82,6 +82,11 @@ class WhiteListConfig {
      * 时间戳超过10分钟就认为错误
      */
     private static final long TIMEOUT = 600000;
+    
+    /**
+     * token 有效时间：7天
+     */
+    private static final long TOKEN_VALID_TIME = 604800000;
 
     /**
      * 白名单
@@ -240,7 +245,7 @@ class WhiteListConfig {
                 TokenBean tokenBean = tokenMapper.getToken(userId, appId);
                 if (tokenBean != null) {
                     currentToken = tokenBean.getToken();
-                    expireTime = tokenBean.getUpdateTime().getTime() + 604800000;
+                    expireTime = tokenBean.getUpdateTime().getTime() + TOKEN_VALID_TIME;
                 } else {
                     logger.info("token miss.");
                     return false;
