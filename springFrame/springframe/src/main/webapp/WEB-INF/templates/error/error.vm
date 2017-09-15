@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+#set($baseUrl = $request.getScheme() + "://" + $request.getServerName() + ":" + $request.getServerPort() + $request.getContextPath())
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <title></title>
+    <style>
+        @charset "utf-8";
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+        }
+        body,html{
+            background-color: #f8f8f8;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+        .inbox{
+            width: 100vw;
+            height: 75vh;
+            display: table;
+            text-align: center;
+        }
+        .nofound{
+            width: 200px;
+            height: 100px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .nofundpic{
+            width: 114px;
+            height: 74px;
+        }
+        .cont1{
+            margin-top: 20px;
+            font-size: 18px;
+            color: #999;
+        }
+        .cont2{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+<div class="inbox">
+    <div class="nofound">
+        <img class="nofundpic" src="$baseUrl/resources/image/error.png"/>
+        <div class="showcontent">
+            <p class="cont1">服务器去减肥了</p>
+            <p class="cont2">请稍等一下</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

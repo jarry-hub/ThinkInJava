@@ -12,12 +12,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.phicomm.big.data.module.luck.TestRequestModel;
 import com.phicomm.big.data.module.luck.TestResponseModel;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 /**
  * H5页面接口
  *
  * @author yufei.liu
  */
 @Controller
+@ApiIgnore
 public class TestController {
 
     /**
