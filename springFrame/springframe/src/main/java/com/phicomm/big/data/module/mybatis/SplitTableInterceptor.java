@@ -38,30 +38,21 @@ public class SplitTableInterceptor implements Interceptor, ApplicationContextAwa
      * 拦截的参数名字
      */
     private static final String[] filterParamNameList = new String[]{
-            "memberId",
-            "userId",
-            "userId",
-            "memberId"
+            "splitTableFlag"
     };
 
     /**
      * 拦截的表名字
      */
     private static final String[] filterTableNameList = new String[]{
-            "blood_pressure_measure_info",
-            "app_share_info",
-            "luck_draw_info",
-            "balance_measure_info"
+            "mysql_test",
     };
 
     /**
      * 分表的大小
      */
     private static final int[] splitTableSizeList = new int[]{
-            20,
-            10,
-            10,
-            50
+            2
     };
 
     private int BALANCE_MEASURE_INFO_SPLIT_TABLE_THRESHOLD;

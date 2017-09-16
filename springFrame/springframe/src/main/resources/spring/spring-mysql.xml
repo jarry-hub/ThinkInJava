@@ -13,11 +13,11 @@
         <property name="configLocation" value="classpath:mybatis-mysql-config.xml"/>
         <property name="dataSource" ref="dynamicDataSource"/>
         <property name="mapperLocations" value="classpath:mappering/*.xml"/>
-        <!-- <property name="plugins">
+        <property name="plugins">
             <list>
                 <bean class="com.phicomm.big.data.module.mybatis.SplitTableInterceptor"/>
             </list>
-        </property> -->
+        </property>
     </bean>
 
     <!-- mybatis扫描包名记得修改 -->

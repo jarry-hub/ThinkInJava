@@ -1,5 +1,8 @@
 package com.phicomm.big.data.dao.mysql;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.phicomm.big.data.module.test.TestModel;
@@ -7,11 +10,22 @@ import com.phicomm.big.data.module.test.TestModel;
 @Repository
 public interface TestMapper {
 
-    TestModel getRecordById(long id);
+    TestModel getRecordById(@Param("splitTableFlag") long splitTableFlag,
+    						@Param("id") long id);
+    
+    /**
+     * 插入数据
+     *
+     * @param data     数据id
+     */
+    void insert(@Param("splitTableFlag") long splitTableFlag, 
+    			@Param("data") TestModel data);
 
     /**
-     * 获取分表的大小
+     * 批量插入
+     *
+     * @param dataSet  批量数据
      */
-    //Integer testSplitTable(@Param("memberId") Long memberId);
+    void insertBatch(@Param("dataSet") List<TestModel> dataSet);
 
 }

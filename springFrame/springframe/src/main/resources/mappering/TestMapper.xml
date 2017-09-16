@@ -6,11 +6,36 @@
     <select id="getRecordById" parameterType="java.lang.Long"
             resultType="com.phicomm.big.data.module.test.TestModel">
         SELECT
-            id, city, content
+            id, city, content, 
+            create_time AS createTime, 
+            split_table_flag AS splitTableFlag
         FROM
             mysql_test
         WHERE
             id = #{id,jdbcType=BIGINT}
     </select>
+    
+    <insert id="insert">
+        INSERT IGNORE INTO mysql_test (
+            split_table_flag, city, content, create_time
+        )
+        values (
+            #{data.splitTableFlag,jdbcType=BIGINT}, #{data.city,jdbcType=VARCHAR}, 
+            #{data.content,jdbcType=VARCHAR}, #{data.createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertBatch">
+        INSERT IGNORE INTO mysql_test (
+            city, content, create_time
+        )
+        VALUES
+        <foreach collection="dataSet" item="data" separator=",">
+            (
+            #{data.splitTableFlag,jdbcType=BIGINT}, #{data.city,jdbcType=VARCHAR}, 
+            #{data.content,jdbcType=VARCHAR}, #{data.createTime, jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
     
 </mapper>
