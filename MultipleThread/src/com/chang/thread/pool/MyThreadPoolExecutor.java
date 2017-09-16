@@ -62,24 +62,33 @@ public class MyThreadPoolExecutor {
 	    if (command == null)
 	        throw new NullPointerException();
 	    if (poolSize >= corePoolSize || !addIfUnderCorePoolSize(command)) {
+	    	//此时的环境: 线程数量>=corePollSize 或者 (线程数量不多但开新线程失败)
 	        if (runState == RUNNING && workQueue.offer(command)) {
+	        	//此时环境: 当前线程池处于RUNNING状态且将任务放入任务缓存队列成功
 	            if (runState != RUNNING || poolSize == 0) {
+	            	//为了防止在将此任务添加进任务缓存队列的同时其他线程突然调用shutdown或者shutdownNow方法关闭了线程池的一种应急措施
 	                //ensureQueuedTaskHandled(command);
 	            }
-	        }
-	        else if (!addIfUnderMaximumPoolSize(command)) {
-	            //reject(command); // is shutdown or saturated
+	        } else if (!addIfUnderMaximumPoolSize(command)) {	//线程池状态判断呢？？？
+	            reject(command); // is shutdown or saturated
 	        }
 	    }
 	}
 	
+	/**
+	 * 线程数量小于核心池大小，且线程池正常工作，则创建线程执行新任务
+	 * @param firstTask
+	 * @return
+	 */
 	private boolean addIfUnderCorePoolSize(Runnable firstTask) {
 	    Thread t = null;
 	    final ReentrantLock mainLock = this.mainLock;
 	    mainLock.lock();
 	    try {
 	        if (poolSize < corePoolSize && runState == RUNNING)
-	            t = addThread(firstTask);        //创建线程去执行firstTask任务   
+	        	//再次判断的原因：前面的判断过程中并没有加锁，因此可能在execute方法判断的时候poolSize小于corePoolSize，
+	        	//而判断完之后，在其他线程中又向线程池提交了任务，就可能导致poolSize不小于corePoolSize了，所以需要在这个地方继续判断
+	            t = addThread(firstTask);
 	        } finally {
 	        mainLock.unlock();
 	    }
@@ -89,6 +98,11 @@ public class MyThreadPoolExecutor {
 	    return true;
 	}
 	
+	/**
+	 * 当线程数量大于corePoolSize但小于最大数量时 .........
+	 * @param firstTask
+	 * @return
+	 */
 	private boolean addIfUnderMaximumPoolSize(Runnable firstTask) {
 	    Thread t = null;
 	    final ReentrantLock mainLock = this.mainLock;
@@ -104,6 +118,10 @@ public class MyThreadPoolExecutor {
 	    t.start();
 	    return true;
 	}
+	
+	void reject(Runnable command) {  
+        //handler.rejectedExecution(command, this);  
+    }
 	
 	private Thread addThread(Runnable firstTask) {
 	    Worker w = new Worker(firstTask);
@@ -174,6 +192,19 @@ public class MyThreadPoolExecutor {
 	    }
 	}
 	
+	void workerDone(Worker w) {  
+        final ReentrantLock mainLock = this.mainLock;  
+        mainLock.lock();  
+        try {  
+            completedTaskCount += w.completedTasks;  
+            workers.remove(w);  
+            if (--poolSize == 0) {  
+                //tryTerminate(); 
+            }
+        } finally {  
+            mainLock.unlock();  
+        }  
+    } 
 	
 	/**************************************** 线程池中的线程初始化 **************************************************/
 	public boolean prestartCoreThread() {
@@ -257,9 +288,11 @@ public class MyThreadPoolExecutor {
 	                task = null;
 	            }
 	        } finally {
-	            //workerDone(this);   //当任务队列中没有任务时，进行清理工作       
+	            workerDone(this);   //当任务队列中没有任务时，进行清理工作       
 	        }
 	    }
+	    
+	    
 	}
 
 }
