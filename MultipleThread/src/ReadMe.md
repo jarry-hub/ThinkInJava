@@ -16,8 +16,7 @@
 
 #### 3.3 类ThreadLocal的使用
 ##### 3.3.1 [方法get()与NULL](com.chapter3.P)
-##### 3.3.1 [方法get()与NULL](com.chapter3.P)
-##### 3.3.1 [方法get()与NULL](com.chapter3.P)
+
 
 ### 第四章 Lock的使用
 #### 4.1 使用ReentrantLock类
@@ -45,6 +44,23 @@
 
 ### 第五章 定时器Timer
 #### 5.1 定时器Timer的使用
-##### 5.1.1 [方法schedule(TimerTask task, Date time)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P242)
-##### 5.1.2 [方法schedule(TimerTask task, Date firstTime, long period)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter4/P247)
+##### 5.1.1 [方法schedule(TimerTask task, Date time)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter5/P242)
+##### 5.1.2 [方法schedule(TimerTask task, Date firstTime, long period)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter5/P247)
+##### 5.1.2 [方法schedule(TimerTask task, long delay)的测试](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter5/P252)
+
+### 第六章 单例模式与多线程
+#### 6.1 [立即加载/"饿汉模式"](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P263)
+#### 6.2 延迟加载/"懒汉模式"
+##### 1. [延迟加载/"懒汉模式"解析](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P264)
+##### 2. [延迟加载/"懒汉模式"的缺点](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P265)
+##### 3. [延迟加载/"懒汉模式"的解决方案](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P266)
+#### 6.3 [使用静态内置类实现单例模式](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P272)
+#### 6.4 [序列化与反序列化的单例模式实现](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P273)
+#### 6.5 使用static代码块实现单例模式
+
+#### 6.6 使用enum枚举实现单例模式
+
+#### 6.7 完善使用enum枚举实现
+
+#### 6.8 本章总结
 
