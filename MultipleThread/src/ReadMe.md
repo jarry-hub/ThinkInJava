@@ -56,11 +56,22 @@
 ##### 3. [延迟加载/"懒汉模式"的解决方案](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P266)
 #### 6.3 [使用静态内置类实现单例模式](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P272)
 #### 6.4 [序列化与反序列化的单例模式实现](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P273)
-#### 6.5 使用static代码块实现单例模式
-
-#### 6.6 使用enum枚举实现单例模式
-
+#### 6.5 [使用static代码块实现单例模式](https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P275)
+#### 6.6 使用enum枚举实现单例模式(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter6/P276)
 #### 6.7 完善使用enum枚举实现
-
 #### 6.8 本章总结
+
+### 第七章 拾遗增补
+#### 7.1 线程的状态
+##### 7.1.1 验证NEW、RUNNABLE和TERMINATED(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P281)
+##### 7.1.2 验证TIMED_WAITING(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P282)
+##### 7.1.3 验证BLOCKED(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P283)
+##### 7.1.4 验证WAITING(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P284)
+#### 7.2 线程组
+##### 7.2.1 线程对象关联线程组：1级关联(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P286)
+##### 7.2.1 线程对象关联线程组：多级关联(https://github.com/wooyeeyii/ThinkInJava/tree/master/MultipleThread/src/com/chapter7/P287)
+
+
+
+
 

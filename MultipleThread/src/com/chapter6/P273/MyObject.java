@@ -1,6 +1,5 @@
 package com.chapter6.P273;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 public class MyObject implements Serializable {
